@@ -64,7 +64,7 @@ class Quark:
             "vcode": self.param.get('vcode')
         }
         response = requests.get(url=url, params=querystring).json()
-        #print(response)
+        print(response)
         if response.get("data"):
             return response["data"]
         else:
@@ -85,7 +85,7 @@ class Quark:
         }
         data = {"sign_cyclic": True}
         response = requests.post(url=url, json=data, params=querystring).json()
-        #print(response)
+        print(response)
         if response.get("data"):
             return True, response["data"]["sign_daily_reward"]
         else:
@@ -101,7 +101,7 @@ class Quark:
             "kps": self.param.get('kps'),
         }
         response = requests.get(url=url, params=querystring).json()
-        # print(response)
+        print(response)
         if response.get("data"):
             return response["data"]["balance"]
         else:
